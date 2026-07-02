@@ -129,20 +129,24 @@ img {
 }
 
 .wrapper {
-    
-    /* background: linear-gradient(-90deg, rgba(188, 59, 61, 0.36) 54%, rgba(97, 42, 155, 0.36) 100%); */
-    /* float: left; */
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%; /* height берется от % height body*/
     /* overflow-y: hidden; */
 }
 
 .container {
-    height: 10%; /* height берется относительно родит. элемента -> 10% ширины от wrapper */
+    height: 10%; /* height берется относительно родит. элемента -> 
+    10% ширины от wrapper
+    /* после container во .wrapper остаётся 90% height - если задать
+    в дочернем ему блоке ниже больше height (например 100%) - 
+    будет переполнение и появляется полоса прокрутки */
     /* border: black 2px solid; */
     display: flex;
     /* justify-items: end; */
     align-items: center; 
+    flex-shrink: 0;
 }
 
 .container nav {
@@ -196,9 +200,8 @@ img {
 
 .hero {
     /* border: lime 2px dotted; */
-    /* float: right; */
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -206,7 +209,7 @@ img {
 
 .reze {
     width: 35%;
-    height: 90%;
+    height: 100%;
     /* border: dotted 2px red; */
     /* max-height: 100%; */
     z-index: 20;
@@ -329,42 +332,100 @@ img {
     transition: 0.2s;
 }
 
-
 .about-hero {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: 90%;
     flex-wrap: nowrap;
+    flex: 1;
 }
 
-.about--info {
+.about-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 60%;
+    border: 2px lightgreen dotted;
+}
+
+.about--text {
     border: 2px cyan dotted;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 40vh;
-    width: 60%;
-    padding: 40px;
+    flex-wrap: wrap;
+    height: 45%;
+    padding: 20px;
+    margin: 20px;
     color: white;
 }
 
 #aboutheader {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     font-family: "Moul-Regular", "Moul";
     font-size: 3em;
-
 }
 
 #first-text, #second-text {
     font-family: "Manrope-Regular", "Manrope";
     font-size: 1.5em;
+    text-align: justify;
 }
 
-#first-text {
-    /* padding-bottom: 30px; */
+.skills-info {
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    height: 30%;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 2px lightseagreen dotted;
+}
+
+.backend-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #A96262;
+    width: 35%;
+    height: 35%;
+    border: 2px solid #523B5D;
+    border-radius: 500px;
+}
+
+.frontend-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #A96262;
+    width: 35%;
+    height: 35%;
+    border: 2px solid #523B5D;
+    border-radius: 500px;
+}
+
+.hobby-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-self: flex-end;
+    background-color: #A96262;
+    width: 35%;
+    height: 35%;
+    border: 2px solid #523B5D;
+    border-radius: 500px;
+}
+
+.c-item {
+    border: 2px solid #523B5D;
+    border-radius: 50%; 
+    background-color: #945555; 
+    width: 15%; 
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -382,4 +443,43 @@ img {
     width: 90%;
     height: 75%;
     filter: drop-shadow(37px 15px 2px rgba(0, 0, 0, 0.25));
+    border: 2px yellow dotted;
+}
+
+
+
+
+
+
+/* Когда ширина экрана становится меньше 768px (это примерно планшет) */
+/* Когда ширина экрана становится меньше 480px (это примерно телефон) */
+@media (max-width: 768px) {
+    #first-text, #second-text {
+        font-size: 14px;
+    }
+    #aboutheader {
+        font-size: 1.5em;
+        }
+
+    #imageaboutreze {
+        width: 90%;
+        height: 50%;
+        }
+
+    .container li a {
+        font-size: 14px;
+        }
+    .container ul {
+        gap: 40px;
+
+        }   
+}
+
+@media (max-width: 480px) {
+  #first-text, #second-text {
+    font-size: 10px;
+  }
+  #aboutheader {
+    font-size: 1em;
+    }
 }
