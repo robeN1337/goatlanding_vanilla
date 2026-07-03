@@ -1,92 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Moul&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
-/* отступы margin padding
-    margin - внешний отступ
-    padding - внутренний (в объекте) отступ
-    margin: 20px - со всех сторон отступ
-    margin: 20px 50px; - первое значение верх и низ; второе значение - боковые  
-    margin: 20px 50px 100px - первое значение верх; второе - боковые; третье - низ 
-    margin: 20px 50px 100px 200px - первое значение верх; второе - бок справа; третье - низ; четвертое - бок слева;
-    padding - всё то же самое, что и margin */
-/* float
-    блоки (div) всегда идут друг за другом (по умолчанию сверху - вниз).
-    для изменения направления (чтобы блоки были на одном уровне) используется float:
-
-    html
-    <div id="first"></div>
-    <div id="second"></div>
-    css
-    #first {
-        float: left
-    } - блок first будет прижат к левой стороне
-    #second {
-        float: left - второй блок прижмётся уже к первому в левую сторону
-    } */
-
-
-/* vh и vw
-    vh (viewport height) vw (viewport width) - берут значение размера видимого окна браузера
-    30vh - 30% высоты видимого окна браузера */
-
-/* position
-    position даёт таскать элементы с помощью left, right и т.п. (кроме static)
-    position: static - по умолчанию
-    position: relative - не влияет на расположение соседних элементов
-    position: absolute - не особо понял, но используется вместе с relative
-    (https://youtu.be/jQCzxM2dPWU?list=PL0MUAHwery4ojFkcq8PD-6ylUalMGqXfs&t=264)
-    position: fixed - фиксирует элемент, чтобы при скролле он не уходил вверх
-    position: sticky - по типу бокового меню в магазинах, закрепляется как fixed когда
-    до него доходит скролл
-
-    top,left и др: 50% - если position - relative, то проценты берутся от самого элемента
-    если absolute,sticky,fixed - берется ширина родительского элемента
-
-    top,left и др. заменяются новым словом inset: 0 0 0 0 */
-
-/*    контекст наложения z-index (работает только если прописан position (не static) )
-    чем ниже код элемента в разметке - тем выше слой элемента оси z
-    лучше задавать с кратностью 10 или 100. */
-
-    
-/*  flexbox (display: flex) - расположение дочерних элементов внутри 
-    родительского элемента 
-    
-    justify-content - main axis(ось x слева направо)
-    align-items - secondary(cross, поперечная) axis(ось y сверху вниз)
-    flex-direction - по умолчанию row (блоки в строку); row-reverse (реверсирует полностью
-    main axis); column - переворачивает main axis в положение "сверху-вниз" и так-же 
-    разворачивает secondary axis
-    gap - расстояние между блоками
-    flex-wrap - wrap: responsive alignment блоков (при сужении окна переносит блоки 
-    на следующую строку); nowrap: блоки будут сжиматься при сужении окна. При переносе
-    блоков на новую строку - у этой строки так-же появляется свой main и secondary axis
-     
-    пример: расположение дочерних 
-    элементов списка (li) в родительском неупорядоченном 
-    списке (ul) делаются колонкой таким образом: 
-    
-    .container ul {
-    display: flex; 
-    justify-content: space-between; 
-    flex-direction: column;
-    align-items: end; 
-}
-
-    .container li {
-    list-style-type: none;
-} 
-    
-    align-self — это свойство, которое позволяет одному конкретному элементу 
-    выровняться иначе, чем задал родитель через align-items. (работает только внутри 
-    flex-контейнера)
-
-    */
-
-/*
-
-*/    
+ 
 
 @font-face {
     font-family: "Moul-Regular";
@@ -107,12 +22,12 @@
 }
 
 html {
-    height: 100%; /* height берется от % viewport браузера (размера окна) - vh*/
+    height: 100%; 
 }
 
 
 body {
-    height: 100%; /* height берется от % height html*/
+    height: 100%;
     background: linear-gradient(-90deg, rgba(84, 25, 26, 0.8) 54%, rgba(48, 21, 77, 0.7) 100%);
 }
 
@@ -132,26 +47,18 @@ img {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%; /* height берется от % height body*/
-    /* overflow-y: hidden; */
+    height: 100%;
 }
 
 .container {
-    height: 10%; /* height берется относительно родит. элемента -> 
-    10% ширины от wrapper
-    /* после container во .wrapper остаётся 90% height - если задать
-    в дочернем ему блоке ниже больше height (например 100%) - 
-    будет переполнение и появляется полоса прокрутки */
-    /* border: black 2px solid; */
+    height: 10%;
     display: flex;
-    /* justify-items: end; */
     align-items: center; 
     flex-shrink: 0;
 }
 
 .container nav {
     width: 100%;
-    /* border: 2px black dotted; */
 }
 
 .container ul {
@@ -160,8 +67,6 @@ img {
     justify-content: flex-end;
     gap: 80px;
     margin: 0 20px;
-    /* border: lightpink 2px solid; */
-    
 }   
 
 .container li {
@@ -199,7 +104,6 @@ img {
 
 
 .hero {
-    /* border: lime 2px dotted; */
     width: 100%;
     height: 90%;
     display: flex;
@@ -210,8 +114,6 @@ img {
 .reze {
     width: 35%;
     height: 100%;
-    /* border: dotted 2px red; */
-    /* max-height: 100%; */
     z-index: 20;
     display: flex;
     flex-direction: column;
@@ -221,18 +123,12 @@ img {
 
 #imagereze {
     width: 80%;
-    /* margin-bottom: 10%; */
-    /* border: dotted 2px red; */
-    /* float: left;  */
     z-index: 21;
-    /* position: fixed; */
-    
     filter: drop-shadow(-42px 8px 2px rgba(0, 0, 0, 0.25)); /* работает с прозрачным фоном картинки */
 
 }
 
 .hero--info {
-    /* border: yellow 2px dotted; */
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -244,7 +140,6 @@ img {
 }
 
 .hello--text {
-    /* border: cyan 2px dotted; */
     display: flex;
     flex-direction: column;
     justify-items: right;
@@ -255,12 +150,12 @@ img {
 }
 
 .hello--text h1:first-child {
-    align-self: flex-start; /* только первый h1 — влево */
+    align-self: flex-start;
     padding: 0 20px;
 }
 
 .hello--text h1:nth-child(2) {
-    align-self: flex-end; /* nth-child(2) - второй h1 после first-child и т.д. */
+    align-self: flex-end;
     padding: 0 20px;
 }
 
@@ -289,7 +184,6 @@ img {
 
 .hello--footer {
     display: flex;
-    /* border: dotted 2px rgb(128, 0, 255); */
     flex-direction: row;
     justify-content: space-around;
     margin-top: auto;
@@ -311,16 +205,11 @@ img {
 
 
 .social {
-    /* border: dotted 2px rgb(194, 20, 197); */
     height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* margin-bottom: 10%; */
     margin: 0 0 20% 0;
-    /* padding: 15px 0; */
-    /* visibility: hidden; */
-    /* width: 5%; */
 }
 
 .social a svg {
@@ -347,11 +236,9 @@ img {
     justify-content: space-between;
     height: 100%;
     width: 60%;
-    border: 2px lightgreen dotted;
 }
 
 .about--text {
-    border: 2px cyan dotted;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -376,11 +263,9 @@ img {
 .skills-info {
     display: flex;
     padding: 20px;
-    margin: 20px;
     height: 30%;
     justify-content: space-between;
     align-items: flex-start;
-    border: 2px lightseagreen dotted;
 }
 
 .backend-cont {
@@ -413,6 +298,7 @@ img {
     background-color: #A96262;
     width: 35%;
     height: 35%;
+    margin-bottom: 5%;
     border: 2px solid #523B5D;
     border-radius: 500px;
 }
@@ -428,9 +314,27 @@ img {
     align-items: center;
 }
 
+.c-item img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.c-item:hover {
+    border: 2px solid #E05454;
+    transition: 0.2s;
+}
+
+#skills-header {
+    color: white;
+    font-family: "Moul-Regular", "Moul";
+    font-size: 2em;
+    margin-left: 40px;
+    margin-top: auto;
+}
+
 
 .about-reze {
-    border: 2px yellow dotted;
     width: 40%;
     height: 90vh;
     display: flex;
@@ -443,43 +347,4 @@ img {
     width: 90%;
     height: 75%;
     filter: drop-shadow(37px 15px 2px rgba(0, 0, 0, 0.25));
-    border: 2px yellow dotted;
-}
-
-
-
-
-
-
-/* Когда ширина экрана становится меньше 768px (это примерно планшет) */
-/* Когда ширина экрана становится меньше 480px (это примерно телефон) */
-@media (max-width: 768px) {
-    #first-text, #second-text {
-        font-size: 14px;
-    }
-    #aboutheader {
-        font-size: 1.5em;
-        }
-
-    #imageaboutreze {
-        width: 90%;
-        height: 50%;
-        }
-
-    .container li a {
-        font-size: 14px;
-        }
-    .container ul {
-        gap: 40px;
-
-        }   
-}
-
-@media (max-width: 480px) {
-  #first-text, #second-text {
-    font-size: 10px;
-  }
-  #aboutheader {
-    font-size: 1em;
-    }
 }
