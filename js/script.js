@@ -1,10 +1,4 @@
-const bodyElement = document.querySelector("body")
 const aboutbuttonElement = document.querySelector(".aboutbutton")
-
-if (document.querySelector("body").classList.length === 0)
-{
-    // ...
-}
 
 
 if (document.querySelector(".about-body")) {
@@ -15,6 +9,9 @@ if (document.querySelector(".about-body")) {
     const skillsinfoElement = document.querySelector(".skills-info")
     const aboutrezeElement = document.querySelector(".about-reze")
 
+    aboutbuttonElement.addEventListener("click", (e) => {
+        e.preventDefault();
+    })
     window.addEventListener("load", () => {
     aboutrezeElement.classList.add("visible")
     aboutheaderElement.classList.add("visible")
