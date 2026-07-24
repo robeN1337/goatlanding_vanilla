@@ -31,10 +31,15 @@ else {
     const hellofooterElement = document.querySelector(".hello--footer")
     const socialElements = document.querySelectorAll(".social a")
     const h2hellofooterElements = document.querySelectorAll(".hello--footer h2")
-    
+    const headermenuElement = document.querySelector(".header-menu")
+    const testbuttonElement = document.querySelector("#testbutton")
+    const buttonsElement = document.querySelector(".mobbuttons")
+
+
     window.addEventListener("load", () => {
         rezeElement.classList.add("visible")
         hellotextElement.classList.add("visible")
+        buttonsElement.classList.add("visible")
         h2hellofooterElements.forEach((element, index) => {
             setTimeout(() => {
                 element.classList.add("visible")
@@ -46,4 +51,5 @@ else {
             }, 150 * index);
         })
     })
+    
 }
