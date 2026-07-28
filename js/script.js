@@ -34,7 +34,8 @@ else {
     const headermenuElement = document.querySelector(".header-menu")
     const testbuttonElement = document.querySelector("#testbutton")
     const buttonsElement = document.querySelector(".mobbuttons")
-
+    const sidemenubuttonElement = document.querySelector("#sidemenubutton")
+    const sidemenuElement = document.querySelector(".sidemenu")
 
     window.addEventListener("load", () => {
         rezeElement.classList.add("visible")
@@ -49,6 +50,14 @@ else {
             setTimeout(() => {
                 element.classList.add("visible")
             }, 150 * index);
+        })
+    })
+
+    sidemenubuttonElement.addEventListener("click", () => {
+        sidemenuElement.classList.add("visible")
+        const sidemenuclosebuttonElement = document.querySelector(".sidemenu .cb-container #sidemenuclosebutton")
+        sidemenuclosebuttonElement.addEventListener("click", () => {
+            sidemenuElement.classList.remove("visible")
         })
     })
     

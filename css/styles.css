@@ -32,7 +32,6 @@ body {
 }
 
 
-
 img {
     display: block;
     max-width: 100%;
@@ -60,6 +59,7 @@ img {
     display: flex; 
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     gap: 80px;
     margin: 0 20px;  
 }   
@@ -97,6 +97,9 @@ img {
     transition: 200ms;
 }
 
+.container nav ul li:last-child {
+        display: none;
+    }
 
 .hero {
     width: 100%;
@@ -250,21 +253,52 @@ img {
     transition: 0.2s;
 }
 
+.sidemenu {
+    display: none;
+}
+
 
 /* Когда ширина экрана становится меньше 768px (это примерно планшет) */
 @media (max-width: 768px) {
-    .container li a {
-        font-size: 14px;
-        }
-    .container ul {
-        gap: 40px;
-
-        }   
+ 
 }
 
 /* Когда ширина экрана становится меньше 480px (это примерно телефон) */
 @media (max-width: 480px) {
+
+    .container nav ul {
+        margin: 0 10px;
+    }
+
+    .container li a {
+        font-size: 16px;
+    }
+
+    .container nav ul li:first-child svg {
+        width: 42px;
+        height: 42px;
+    }
+
+    .container nav ul li:nth-child(n+2)
+    {
+        display: none;
+    }
     
+    .container nav ul li:last-child {
+        display: block;
+    }
+    
+    .container nav ul li:last-child button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border: 2px white solid;
+        color: #FEFEFE;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
     .hero {
         flex-direction: column;
         justify-content: flex-start;
@@ -272,7 +306,6 @@ img {
     }
 
     .hero--info {
-        /* border: 2px dotted green; */
         width: 100%;
         height: auto;
         padding: 0;
@@ -294,7 +327,7 @@ img {
 
     .reze #imagerezemob {
         display: block;
-        width: 50%;
+        width: 60%;
         margin-right: 20px;
     }
 
@@ -370,8 +403,64 @@ img {
     }
 
     .social {
+        height: 0;
         flex-direction: row;
-        display: none;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: flex-end;
+        margin: 25% 0 10% 0;
+        
+    }
+
+    .social a svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .sidemenu.visible {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        background: linear-gradient(90deg, rgba(62, 40, 64, 1) 0%, rgba(77, 43, 48, 1) 100%);
+    }
+
+    .sidemenu .cb-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    #sidemenuclosebutton {
+        margin: 20px;
+    }
+
+    .sidemenu li {
+        list-style-type: none;
+    }
+
+    .sidemenu button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border: 2px white solid;
+        color: #FEFEFE;
+        border-radius: 5px;
+    }
+
+    .sidemenu ul {
+        align-self: center;
     }
 
 }
