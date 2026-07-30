@@ -26,17 +26,18 @@ if (document.querySelector(".about-body")) {
 }
 
 else {
+    const bodyElement = document.querySelector("body")
     const rezeElement = document.querySelector(".reze")
     const hellotextElement = document.querySelector(".hello--text")
     const hellofooterElement = document.querySelector(".hello--footer")
     const socialElements = document.querySelectorAll(".social a")
     const h2hellofooterElements = document.querySelectorAll(".hello--footer h2")
     const headermenuElement = document.querySelector(".header-menu")
-    const testbuttonElement = document.querySelector("#testbutton")
     const buttonsElement = document.querySelector(".mobbuttons")
     const sidemenubuttonElement = document.querySelector("#sidemenubutton")
     const sidemenuElement = document.querySelector(".sidemenu")
 
+    console.log(bodyElement.outerHTML)
     window.addEventListener("load", () => {
         rezeElement.classList.add("visible")
         hellotextElement.classList.add("visible")
@@ -55,9 +56,11 @@ else {
 
     sidemenubuttonElement.addEventListener("click", () => {
         sidemenuElement.classList.add("visible")
+        bodyElement.classList.add("sidemenuopened")
         const sidemenuclosebuttonElement = document.querySelector(".sidemenu .cb-container #sidemenuclosebutton")
         sidemenuclosebuttonElement.addEventListener("click", () => {
             sidemenuElement.classList.remove("visible")
+            bodyElement.classList.remove("sidemenuopened")
         })
     })
     
