@@ -2,13 +2,19 @@ const aboutbuttonElement = document.querySelector(".aboutbutton")
 
 
 if (document.querySelector(".about-body")) {
+    const bodyElement = document.querySelector("body.about-body")
     const aboutheaderElement = document.querySelector(".aboutheader")
     const firsttextElement = document.querySelector(".first-text")
     const secondtextElement = document.querySelector(".second-text")
     const skillsheaderElement = document.querySelector(".skills-header")
     const skillsinfoElement = document.querySelector(".skills-info")
     const aboutrezeElement = document.querySelector(".about-reze")
+    const buttonsElement = document.querySelector(".mobbuttons")
+    const sidemenubuttonElement = document.querySelector("#sidemenubutton")
+    const sidemenuElement = document.querySelector(".sidemenu")
+    const linecssmobElement = document.querySelector("#linecssmob")
 
+    console.log(bodyElement.outerHTML)
     aboutbuttonElement.addEventListener("click", (e) => {
         e.preventDefault();
     })
@@ -20,9 +26,20 @@ if (document.querySelector(".about-body")) {
         secondtextElement.classList.add("visible")
         skillsheaderElement.classList.add("visible")
         skillsinfoElement.classList.add("visible")
+        linecssmobElement.classList.add("visible")
     }, 100)
     
-})
+    })
+
+    sidemenubuttonElement.addEventListener("click", () => {
+        sidemenuElement.classList.add("visible")
+        bodyElement.classList.add("sidemenuopened")
+        const sidemenuclosebuttonElement = document.querySelector(".sidemenu .cb-container #sidemenuclosebutton")
+        sidemenuclosebuttonElement.addEventListener("click", () => {
+            sidemenuElement.classList.remove("visible")
+            bodyElement.classList.remove("sidemenuopened")
+        })
+    })
 }
 
 else {

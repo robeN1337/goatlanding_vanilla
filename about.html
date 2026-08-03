@@ -22,18 +22,29 @@
                     <li> <a href="https://t.me/robussines" target="_blank">Contact</a></li>
                     <li> <a href="#">My works</a></li>
                     <li class="aboutbutton"> <a href="/about.html">About</a></li>
+                    <li id="sidemenubutton">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                            </svg> 
+                        </button> 
+                    </li>
                 </ul>
             </nav>
         </header>
 
         <div class="about-hero">
+             <div class="about-reze">
+                <img src="reze_2_contrast_otr.png" id="imageaboutreze" draggable="false" oncontextmenu="return false;">
+                <img src="reze_2_contrast_otrmob.png" id="imageaboutrezemob" draggable="false" oncontextmenu="return false;">
+            </div>
             <div class="about-info">
                 <div class="about--text">
                     <p class="aboutheader">Who <span style="color: #E05454;">I</span> am and what I do?</p>
                     <p class="first-text">I'm a simple 20-year-old guy who dreams of getting into Big Tech and loves what he does — especially the 
-                        way things are <span style="color: #E05454;">built</span>. I enjoy the very process of creating something of my own, and despite having no 
+                        way things are <span style="color: #E05454;">built</span>. <span id="mobhide"> enjoy the very process of creating something of my own, and despite having no 
                         artistic abilities, I've found a field where I can still be <span style="color: #E05454;">creative</span> (even if it's not as 
-                        visually expressive from an art standpoint, lol).</p>
+                        visually expressive from an art standpoint, lol).</span> </p>
+                    <span id="linecssmob"></span>
                     <p class="second-text">My strength is <span style="color: #E05454;">backend</span> development, but right now I'm also exploring Frontend development, 
                         and you can see the results of that journey on this very site. I'm currently <span style="color: #E05454;">open</span> to job 
                         opportunities and freelance orders. All my progress will be reflected here.</p>
@@ -56,6 +67,7 @@
                             <img src="icons/rest.png" width="36" height="36"></img>
                         </div>
                     </div>
+                    <img src="icons/skillsline.svg" alt="line" id="skillslinemob">
                     <div class="hobby-cont">
                         <div class="c-item" title="Blender">
                             <img src="icons/blender.svg" width="36" height="36"></img>
@@ -67,6 +79,7 @@
                             <img src="icons/git.svg" width="36" height="36"></img>
                         </div>
                     </div>
+                    <img src="icons/skillsline.svg" alt="line" id="skillslinemob">
                     <div class="frontend-cont">
                         <div class="c-item" title="HTML">
                             <img src="icons/html.svg"></img>
@@ -84,13 +97,20 @@
                     
                 </div>
             </div>
-            
-
-            <div class="about-reze">
-                <img src="reze_2_contrast_otr.png" id="imageaboutreze" draggable="false" oncontextmenu="return false;">
-            </div>
         </div>
-
+        <div class="sidemenu">
+            <div class="cb-container">
+                <button id="sidemenuclosebutton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <ul>
+                <li> <a href="https://t.me/robussines" target="_blank">Contact</a></li>
+                <li> <a href="#">My works</a></li>
+                <li> <a href="/about.html">About me</a></li>
+            </ul>    
+        </div> 
     </div>
     <script src="js/script.js"></script>
 </body>
