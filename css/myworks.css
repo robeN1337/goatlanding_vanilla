@@ -25,13 +25,13 @@ html {
 }
 
 
-.about-body {
+.myworks-body {
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, rgba(84, 25, 26, 0.8) 54%, rgba(48, 21, 77, 0.7) 100%);
+    background: linear-gradient(-90deg, rgba(84, 25, 26, 0.8) 54%, rgba(48, 21, 77, 0.7) 100%);
 }
 
-.about-body.sidemenuopened {
+.myworks-body.sidemenuopened {
     overflow: hidden;
 }
 
@@ -104,166 +104,188 @@ img {
     display: none;
 }
 
-.about-hero {
+.myworks-hero {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 90%;
     flex-wrap: wrap;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    font-size: 10px;
 }
 
-.about-reze {
-    width: 40%;
+.myworks-reze {
+    width: 30%;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     opacity: 0;
     transition: opacity 500ms ease-in 50ms;
 }
 
-.about-reze.visible {
+.myworks-reze.visible {
     opacity: 1;
 }
 
-#imageaboutreze {
-    width: 90%;
-    filter: drop-shadow(37px 15px 2px rgba(0, 0, 0, 0.25));
+#imagemyworksreze {
+    width: 100%;
+    filter: drop-shadow(-42px 8px 2px rgba(0, 0, 0, 0.25));
 }
 
-#imageaboutrezemob {
+#imagemyworksrezemob {
     display: none;
 }
 
-.about-info {
+.myworks-info {
+    width: 70%;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 60%;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 30px;
 }
 
-.about--text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 20px;
-    margin: 20px;
+.myworks-info h2 {
+    font-family: "Moul-Regular";
     color: white;
-    gap: 20px;
+    font-weight: 400;
+    font-size: 4em;
 }
 
-.aboutheader {
-    font-family: "Moul-Regular", "Moul";
-    font-size: 3em;
+#myworkstitle {
     opacity: 0;
     transition: opacity 500ms ease-in 50ms;
 }
 
-.aboutheader.visible {
+#myworkstitle.visible {
     opacity: 1;
 }
 
-.first-text, .second-text {
-    font-family: "Manrope-Regular", "Manrope";
-    font-size: 1.5em;
-    text-align: justify;
-    opacity: 0;
-    transition: opacity 1s ease-in 100ms;
+.myworks-grid {
+    width: 95%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
 }
 
-.first-text.visible, .second-text.visible {
-    opacity: 1;
-}
+.myworks-card {
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+    box-sizing: border-box;
 
-.skills-header {
-    color: white;
-    font-family: "Moul-Regular", "Moul";
-    font-size: 2em;
-    margin-left: 40px;
-    opacity: 0;
-    transition: opacity 1s ease-in 100ms;
-}
-
-.skills-header.visible {
-    opacity: 1;
-}
-
-.skills-info {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
     padding: 20px;
-    height: 30%;
-    justify-content: space-between;
-    align-items: flex-start;
+    border: 2px solid #523B5D;
+    border-radius: 46px;
+    background-color: #A96262;
     opacity: 0;
-    transition: opacity 1s ease-in 100ms;
+    transition: opacity 500ms ease-in 50ms;
 }
 
-.skills-info.visible {
+.myworks-card.visible {
     opacity: 1;
 }
 
-#skillslinemob {
+.myworks-cardimage {
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #523B5D;
+    border-radius: 46px;
+    overflow: hidden;
+}
+
+.cardimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+}
+
+#nocardimage {
+    background-image: url("/icons/noimageicon.svg");
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 55%;
+}
+
+#nocardimage img {
     display: none;
 }
 
-.backend-cont {
+.myworks-cardinfo {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: #A96262;
-    width: 35%;
-    height: 35%;
-    border: 2px solid #523B5D;
-    border-radius: 500px;
+
+    width: 70%;
+    height: 100%;
 }
 
-.frontend-cont {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #A96262;
-    width: 35%;
-    height: 35%;
+.myworks-cardtitle {
+    width: 60%;
+    height: 20%;
+    
     border: 2px solid #523B5D;
-    border-radius: 500px;
-}
+    border-radius: 46px;
 
-.hobby-cont {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    align-self: flex-end;
-    background-color: #A96262;
-    width: 35%;
-    height: 35%;
-    margin-bottom: 5%;
-    border: 2px solid #523B5D;
-    border-radius: 500px;
-}
-
-.c-item {
-    border: 2px solid #523B5D;
-    border-radius: 50%; 
-    background-color: #945555; 
-    width: 15%; 
-    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.c-item img {
-    width: 70%;
-    height: 70%;
-    object-fit: contain;
+.myworks-carddescription {
+    height: 40%;
+    width: 95%;
+    border: 2px solid #523B5D;
+    border-radius: 46px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.c-item:hover {
-    border: 2px solid #E05454;
-    transition: 0.2s;
+.myworks-carddescription h2 {
+    font-size: 1.2em;
+    padding: 25px;
+}
+
+.myworks-cardtitle h2 {
+    font-size: 2em;
+}
+
+.myworks-cardtechnologies {
+    width: 95%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.c-item {
+    border: 2px solid #523B5D;
+    border-radius: 100%; 
+    background-color: #945555; 
+    width: 6%; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidemenu {
@@ -319,119 +341,55 @@ img {
         padding: 5px;
     }
 
-    .about-hero {
+    .myworks-hero {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         flex-wrap: nowrap;
     }
 
-    .about-reze {
+    .myworks-reze {
         width: 100%;
         justify-content: center;
     }
 
-    #imageaboutreze {
+    #imagemyworksreze {
         display: none;
     }
 
-    #imageaboutrezemob {
+    #imagemyworksrezemob {
         display: block;
-        width: 60%;
+        width: 55%;
     }
 
-    .about-info {
+    .myworks-info {
         width: 100%;
-        margin-top: -5%;
-        align-items: center;
+
+        margin-top: -10%;
     }
 
-    .about--text {
-        height: auto;
-        padding: 0;
-        margin: 0px 40px 40px 40px;
-        text-align: center;
-        align-items: center ;
-        gap: 15px;
-    }
-
-    .aboutheader {
-        font-size: 1.3em;
+    .myworks-info #myworkstitle {
+        font-size: 3em;
         letter-spacing: 5%;
         margin-bottom: 5%;
     }
 
-    .first-text, .second-text {
-        font-size: 0.9em;
-        line-height: 17px;
+    .myworks-grid {
+        gap: 40px;
     }
 
-    #mobhide {
-        display: none;
+    .myworks-card {
+        height: 130px;
+        padding: 10px
     }
 
-    #linepicmob {
-       width: 70%;
+    .myworks-cardimage {
+        border-radius: 40px;
     }
 
-    #linecssmob {
-        width: 80%;
-        height: 0.1px;
-        border: white 0.5px solid;
-        background-color: white;
-        border-radius: 1000px;
-        opacity: 0;
-        transition: opacity 1s ease-in 100ms;
-    }
-
-    #linecssmob.visible {
-        opacity: 1;
-    }
-
-    .skills-header {
+    .myworks-carddescription h2 {
         font-size: 1em;
-        margin: 0;
-        letter-spacing: 15%;
     }
-
-    .skills-info {
-        padding: 0;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 40%;
-        margin: 5% 0 5% 0;
-    }
-
-    .backend-cont {
-        width: 55%;
-        height: 30%;
-    }
-
-    [title="PostgreSQL"] img {
-        width: 48px;
-        height: 48px;
-    }
-
-    .hobby-cont {
-        align-self: auto;
-        margin: 0;
-        padding: 0;
-
-        width: 55%;
-        height: 30%;
-    }
-
-    .frontend-cont {
-        width: 55%;
-        height: 30%;
-    }
-
-    #skillslinemob {
-        display: block;
-        height: 15%;
-    }
-
 
     .sidemenu {
         z-index: 999;

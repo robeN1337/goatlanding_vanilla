@@ -1,35 +1,15 @@
-const aboutbuttonElement = document.querySelector(".aboutbutton")
+const currentBodyClass = document.body.className  
 
-
-if (document.querySelector(".about-body")) {
-    const bodyElement = document.querySelector("body.about-body")
-    const aboutheaderElement = document.querySelector(".aboutheader")
-    const firsttextElement = document.querySelector(".first-text")
-    const secondtextElement = document.querySelector(".second-text")
-    const skillsheaderElement = document.querySelector(".skills-header")
-    const skillsinfoElement = document.querySelector(".skills-info")
-    const aboutrezeElement = document.querySelector(".about-reze")
-    const buttonsElement = document.querySelector(".mobbuttons")
-    const sidemenubuttonElement = document.querySelector("#sidemenubutton")
+function sidemenuHandler (currentBodyClass) {
+    let bodyElement;
+    if (currentBodyClass === "") {
+        bodyElement = document.querySelector("body")
+    }
+    else {
+        bodyElement = document.querySelector("body." + currentBodyClass)
+    }
     const sidemenuElement = document.querySelector(".sidemenu")
-    const linecssmobElement = document.querySelector("#linecssmob")
-
-    console.log(bodyElement.outerHTML)
-    aboutbuttonElement.addEventListener("click", (e) => {
-        e.preventDefault();
-    })
-    window.addEventListener("load", () => {
-    aboutrezeElement.classList.add("visible")
-    aboutheaderElement.classList.add("visible")
-    setTimeout(() => {
-        firsttextElement.classList.add("visible")
-        secondtextElement.classList.add("visible")
-        skillsheaderElement.classList.add("visible")
-        skillsinfoElement.classList.add("visible")
-        linecssmobElement.classList.add("visible")
-    }, 100)
-    
-    })
+    const sidemenubuttonElement = document.querySelector("#sidemenubutton")
 
     sidemenubuttonElement.addEventListener("click", () => {
         sidemenuElement.classList.add("visible")
@@ -40,19 +20,69 @@ if (document.querySelector(".about-body")) {
             bodyElement.classList.remove("sidemenuopened")
         })
     })
+};
+
+if (document.querySelector(".about-body")) {
+    sidemenuHandler(currentBodyClass);
+    
+    const aboutheaderElement = document.querySelector(".aboutheader")
+    const firsttextElement = document.querySelector(".first-text")
+    const secondtextElement = document.querySelector(".second-text")
+    const skillsheaderElement = document.querySelector(".skills-header")
+    const skillsinfoElement = document.querySelector(".skills-info")
+    const aboutrezeElement = document.querySelector(".about-reze")
+    const linecssmobElement = document.querySelector("#linecssmob")
+    const aboutbuttonElement = document.querySelector(".aboutbutton")
+
+    aboutbuttonElement.addEventListener("click", (e) => {
+        e.preventDefault();
+    })
+    window.addEventListener("load", () => {
+    aboutrezeElement.classList.add("visible")
+    aboutheaderElement.classList.add("visible")
+        setTimeout(() => {
+            firsttextElement.classList.add("visible")
+            secondtextElement.classList.add("visible")
+            skillsheaderElement.classList.add("visible")
+            skillsinfoElement.classList.add("visible")
+            linecssmobElement.classList.add("visible")
+        }, 100)
+    })
+}
+
+else if (document.querySelector(".myworks-body")) {
+    sidemenuHandler(currentBodyClass);
+
+    const myworksbuttonElement = document.querySelector(".myworksbutton")
+    const myworksrezeElement = document.querySelector(".myworks-reze")
+    const myworkstitleElement = document.querySelector("#myworkstitle")
+    const myworkscardsElements = document.querySelectorAll(".myworks-card")
+
+    myworksbuttonElement.addEventListener("click", (e) => {
+        e.preventDefault();
+    })
+
+    window.addEventListener("load", () => {
+        myworksrezeElement.classList.add("visible")
+        myworkstitleElement.classList.add("visible")
+
+        myworkscardsElements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add("visible")
+            }, 100 * index);
+        })
+    })
 }
 
 else {
+    sidemenuHandler(currentBodyClass);
+
     const bodyElement = document.querySelector("body")
     const rezeElement = document.querySelector(".reze")
     const hellotextElement = document.querySelector(".hello--text")
-    const hellofooterElement = document.querySelector(".hello--footer")
     const socialElements = document.querySelectorAll(".social a")
     const h2hellofooterElements = document.querySelectorAll(".hello--footer h2")
-    const headermenuElement = document.querySelector(".header-menu")
     const buttonsElement = document.querySelector(".mobbuttons")
-    const sidemenubuttonElement = document.querySelector("#sidemenubutton")
-    const sidemenuElement = document.querySelector(".sidemenu")
 
     console.log(bodyElement.outerHTML)
     window.addEventListener("load", () => {
@@ -70,15 +100,5 @@ else {
             }, 150 * index);
         })
     })
-
-    sidemenubuttonElement.addEventListener("click", () => {
-        sidemenuElement.classList.add("visible")
-        bodyElement.classList.add("sidemenuopened")
-        const sidemenuclosebuttonElement = document.querySelector(".sidemenu .cb-container #sidemenuclosebutton")
-        sidemenuclosebuttonElement.addEventListener("click", () => {
-            sidemenuElement.classList.remove("visible")
-            bodyElement.classList.remove("sidemenuopened")
-        })
-    })
-    
 }
+
