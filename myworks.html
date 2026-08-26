@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My works</title>
     <link rel="stylesheet" href="css/myworks.css">
-    <link rel="icon" href="icons/chamomile_logo.svg" type="image/x-icon">
+    <link rel="icon" href="icons/chamomile_logo_white.svg" type="image/x-icon">
 </head>
 <body class="myworks-body">
     <div class="wrapper">
@@ -34,86 +34,102 @@
 
         <div class="myworks-hero">
              <div class="myworks-reze">
-                <img src="reze_3_bothversion222.png" id="imagemyworksreze" draggable="false" oncontextmenu="return false;">
-                <img src="reze_3_both_fade.png" id="imagemyworksrezemob" draggable="false" oncontextmenu="return false;">
+                <img src="images/reze_3_bothversion222.png" id="imagemyworksreze" draggable="false" oncontextmenu="return false;">
+                <img src="images/reze_3_both_fade.png" id="imagemyworksrezemob" draggable="false" oncontextmenu="return false;">
             </div>
 
             <div class="myworks-info">
-                <h2 id="myworkstitle">My works</h2>
+                <h2 id="myworkstitle">My works
+                    <h2 id="myworkstitleprim">Tap on the card picture to open full-site image</h2>
+                </h2>
+                
                 <div class="myworks-grid">
                     <div class="myworks-card">
                         <div class="myworks-cardimage">
-                            <img src="/MainPage.png" class="cardimage" draggable="false">
+                            <a href="images/MainPage.png" target="_blank">
+                                <img src="images/MainPage.png" class="cardimage" draggable="false">
+                            </a>
                         </div>
                         
                         <div class="myworks-cardinfo">
                             <div class="myworks-cardtitle">
-                                <h2>Work title</h2>
+                                <h2>You are here!</h2>
                             </div>
                             <div class="myworks-carddescription">
-                                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a sollicitudin enim, non maximus odio. 
-                                    Nunc quis lorem ligula. Ut lacinia convallis ante eget auctor. Nunc sagittis nunc diam</h2>
+                                <h2>A simple, mobile-adapted, multi-page site-portfolio with information about me,
+                                    my services, projects and work experience.
+                                    Made by using vanilla HTML, CSS, JS and Vite for better building. Expected React remade.</h2>
                             </div>
                             <div class="myworks-cardtechnologies">
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    <img src="icons/html.svg" width="36" height="36" title="HTML"></img>
                                 </div>
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    <img src="icons/css.svg" width="36" height="36" title="CSS"></img>
                                 </div>
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    <img src="icons/javascript.svg" width="36" height="36" title="JavaScript"></img>
+                                </div>
+                                <div class="c-item">
+                                    <img src="icons/vite.svg" width="36" height="36" title="Vite"></img>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="myworks-card">
                         <div class="myworks-cardimage">
-                            <img src="/devcontent/reference.jpg" class="cardimage" draggable="false">
+                            <a href="images/w1full.jpg" target="_blank">
+                                <img src="images/w1preview.png" class="cardimage" draggable="false">
+                            </a>
+                            
                         </div>
                         
                         <div class="myworks-cardinfo">
                             <div class="myworks-cardtitle">
-                                <h2>Work title</h2>
+                                <h2>How-to Crypto teaching site</h2>
                             </div>
                             <div class="myworks-carddescription">
-                                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a sollicitudin enim, non maximus odio. 
-                                    Nunc quis lorem ligula. Ut lacinia convallis ante eget auctor. Nunc sagittis nunc diam</h2>
+                                <h2>SPA Landing site for cryptofunds-teaching team with separate page containing mini-quiz,
+                                     which results displays as pretty-blocked "levels" of cryptowallet security knowlegde. 
+                                    Created using React, React Router and Vite for build.
+                                </h2>
                             </div>
                             <div class="myworks-cardtechnologies">
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    <img src="icons/react.svg" width="36" height="36" title="React"></img>
                                 </div>
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    <img src="icons/javascript.svg" width="36" height="36" title="JavaScript"></img>
                                 </div>
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    <img src="icons/vite.svg" width="36" height="36" title="Vite"></img>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="myworks-card">
+                    <div class="myworks-card" id="nocard">
                         <div class="myworks-cardimage" id="nocardimage">
                             <img src="/devcontent/reference2.jpg" class="cardimage" draggable="false">
                         </div>
                         
                         <div class="myworks-cardinfo">
                             <div class="myworks-cardtitle">
-                                <h2>There can be your site!</h2>
+                                <h2>Nothing found :(</h2>
                             </div>
                             <div class="myworks-carddescription">
-                                <h2>Coming soon...</h2>
+                                <h2 style="text-align: center;">A description about, maybe, <span style="color: #E05454;">YOUR</span> magnificent site. <br>
+                                    <a href="https://t.me/robussines" target="_blank" style="text-decoration:underline;">Contact</a> me!
+                                </h2>
                             </div>
                             <div class="myworks-cardtechnologies">
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    :(
                                 </div>
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    :(
                                 </div>
                                 <div class="c-item">
-                                    <img src="icons/blender.svg" width="36" height="36"></img>
+                                    :(
                                 </div>
                             </div>
                         </div>

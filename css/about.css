@@ -24,6 +24,15 @@ html {
     height: 100vh;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E05454;
+    transition: 200ms;
+}
 
 .about-body {
     height: 100%;
@@ -465,6 +474,10 @@ img {
         display: flex;
         justify-content: flex-end;
         margin: 5px 0 0 15px;
+    }
+
+    #sidemenubutton {
+        align-self: flex-start;
     }
     
     #sidemenuclosebutton {

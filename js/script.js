@@ -56,6 +56,7 @@ else if (document.querySelector(".myworks-body")) {
     const myworksbuttonElement = document.querySelector(".myworksbutton")
     const myworksrezeElement = document.querySelector(".myworks-reze")
     const myworkstitleElement = document.querySelector("#myworkstitle")
+    const myworkstitleprimElement = document.querySelector("#myworkstitleprim")
     const myworkscardsElements = document.querySelectorAll(".myworks-card")
 
     myworksbuttonElement.addEventListener("click", (e) => {
@@ -65,6 +66,7 @@ else if (document.querySelector(".myworks-body")) {
     window.addEventListener("load", () => {
         myworksrezeElement.classList.add("visible")
         myworkstitleElement.classList.add("visible")
+        myworkstitleprimElement.classList.add("visible")
 
         myworkscardsElements.forEach((element, index) => {
             setTimeout(() => {
